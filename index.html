@@ -5,40 +5,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bootstrap 1</title>
+    <title>Úklidové služby</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success py-3">
     <div class="container">
-        <h5 class="d-flex p-2">Úklidová služba</h5>
-        <div class="dropdown" data-bs-auto-close="outside">
-            <button class="btn btn-light dropdown-toggle" type="button" id="menubtn"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                Vyber kraj
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="menubtn">
-                <li><label class="dropdown-item"><input type="radio" name="kraj" class="vyber"> Praha</label></li>
-                <li><label class="dropdown-item"><input type="radio" name="kraj" class="vyber"> Zlínský</label></li>
-                <li><label class="dropdown-item"><input type="radio" name="kraj" class="vyber"> Jihočeský</label></li>
-                <li><label class="dropdown-item"><input type="radio" name="kraj" class="vyber"> Plzeňský</label></li>
-                <li><label class="dropdown-item"><input type="radio" name="kraj" class="vyber"> Karlovarský</label></li>
-                <li><label class="dropdown-item"><input type="radio" name="kraj" class="vyber"> Ústecký</label></li>
-                <li><label class="dropdown-item"><input type="radio" name="kraj" class="vyber"> Liberecký</label></li>
-                <li><label class="dropdown-item"><input type="radio" name="kraj" class="vyber"> Královéhradecký</label></li>
-                <li><label class="dropdown-item"><input type="radio" name="kraj" class="vyber"> Pardubický</label></li>
-                <li><label class="dropdown-item"><input type="radio" name="kraj" class="vyber"> Vysočina</label></li>
-                <li><label class="dropdown-item"><input type="radio" name="kraj" class="vyber"> Jihomoravský</label></li>
-                <li><label class="dropdown-item"><input type="radio" name="kraj" class="vyber"> Olomoucký</label></li>
-                <li><label class="dropdown-item"><input type="radio" name="kraj" class="vyber"> Středočeský</label></li>
-                <li><label class="dropdown-item"><input type="radio" name="kraj" class="vyber"> Moravskoslezský</label></li>
-                <li class="text-center p-2">
-                    <button class="btn btn-success w-100" data-bs-toggle="dropdown" aria-expanded="false">Vybrat</button>
-                </li>
-            </ul>
-        </div>
+        <h3 class="d-flex p-2 text-decoration-underline">Úklidová služba</h3>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,9 +35,9 @@
 </header>
 
 <section id="about" class="container py-5">
-    <h2 class="mb-4 text-decoration-underline">O nás</h2>
     <div class="row align-items-center">
-        <div class="col-lg-6 order-lg-1 rounded shadow">
+        <div class="col-lg-6 order-lg-1 rounded shadow ">
+            <h2 class="mb-4 text-decoration-underline py-2">O nás</h2>
             <p>Jsme certifikovaná úklidová firma, která zajišťuje nejen komplexní úklid, ale i technickou správu
                 administrativních prostor a průmyslových hal, ostrahu a služby recepce.</p>
             <p>Vlastníme jedinečné know-how pro efektivní a úsporný úklid. Postaráme se o hygienický servis, desinfekci,
@@ -70,45 +46,45 @@
             <p>Pracujeme výhradně s moderní strojovou technikou a profesionálními čisticími prostředky.</p>
             <p><strong>Jsme tu pro Vás.</strong></p>
         </div>
-        <div class="col-lg-6 order-lg-2 text-center mb-4 mb-lg-0">
+        <div class="col-lg-6 order-lg-2 text-center mb-4 mb-lg-0 py-3">
             <img src="uklízečky.jpg" class="img-fluid rounded shadow" alt="Úklidové služby">
         </div>
     </div>
 </section>
 
-<section id="services" class="container py-5">
+<section id="services" class="container mt-5 py-5">
     <h2>Nabídka služeb</h2>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4 mb-3">
             <div class="card">
                 <img src="https://placehold.co/600x400" class="card-img-top" alt="sluzab">
                 <div class="card-body">
                     <h5 class="card-title">Služba 1</h5>
                     <p class="card-text">Popis služby.</p>
                     <p class="fw-bold">Cena: 1000 Kč</p>
-                    <a href="#" class="btn btn-success">Koupit</a>
+                    <a href="#" class="btn btn-success">Objednat</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4 mb-3">
             <div class="card">
                 <img src="https://placehold.co/600x400" class="card-img-top" alt="sluzab">
                 <div class="card-body">
                     <h5 class="card-title">Služba 1</h5>
                     <p class="card-text">Popis služby.</p>
                     <p class="fw-bold">Cena: 1000 Kč</p>
-                    <a href="#" class="btn btn-success">Koupit</a>
+                    <a href="#" class="btn btn-success">Objednat</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4 mb-3">
             <div class="card">
                 <img src="https://placehold.co/600x400" class="card-img-top" alt="sluzab">
                 <div class="card-body">
                     <h5 class="card-title">Služba 1</h5>
                     <p class="card-text">Popis služby.</p>
                     <p class="fw-bold">Cena: 1000 Kč</p>
-                    <a href="#" class="btn btn-success">Koupit</a>
+                    <a href="#" class="btn btn-success">Objednat</a>
                 </div>
             </div>
         </div>
@@ -132,6 +108,7 @@
             </div>
         </div>
         <div class="mb-3">
+            <i class="bi bi-chat-left-dots d-flex"></i>
             <label for="zprava" class="form-label">  </label>
                 <textarea id="zprava" class="form-control" rows="4" placeholder="Vaše zpráva"></textarea>
         </div>
@@ -158,8 +135,9 @@
         </div>
     </section>
 </div>
-
-
+<footer class=" bg-success text-white text-center py-2">
+    <p>Matyáš Jakeš &copy;2025</p>
+</footer>
 <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
