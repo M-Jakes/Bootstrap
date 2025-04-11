@@ -9,17 +9,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
-    <div class="bi bi-slack display-6dw     "></div>
-    <div class="container">
-        <h1 class="d-flex p-2 text-decoration-underline">Ú.S. JESTER</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-success py-4">
+    <div class="container d-flex">
+        <div class="d-flex align-items-center">
+            <span onclick="location.href='index.html'" style="cursor: pointer;">
+                <i class="bi bi-slack display-6 me-2"></i>
+            </span>
+            <h1 class="mb-0 text-decoration-underline fs-4">Ú.S. JESTER</h1>
+        </div>
 
-        <div class="dropdown" data-bs-auto-close="outside">
-            <button class="btn btn-light dropdown-toggle ms-4" type="button" id="menubtn" data-bs-toggle="dropdown"
+        <div class="dropdown ms-lg-4" data-bs-auto-close="outside">
+            <button class="btn btn-light dropdown-toggle" type="button" id="menubtn" data-bs-toggle="dropdown"
                     aria-expanded="false">
                 Vyber kraj
             </button>
-
             <ul class="dropdown-menu" aria-labelledby="menubtn">
                 <li><label class="dropdown-item"><input type="radio" name="kraj" value="praha"> Praha</label></li>
                 <li><label class="dropdown-item"><input type="radio" name="kraj" value="zlinsky"> Zlínský</label></li>
@@ -40,66 +43,149 @@
                 <li class="text-center p-2"><button class="btn btn-success w-100" id="vyberBtn">Vybrat</button></li>
             </ul>
         </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="d-flex align-items-center ms-4">
+            <i class="bi bi-cart4 position-relative" style="font-size: 2rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#cartModal"></i>
+        </div>
+
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Hlavní stránka</a></li>
                 <li class="nav-item"><a class="nav-link" href="items.html">Produkty</a></li>
             </ul>
         </div>
-
     </div>
-
 </nav>
+
 
 <div class="container-fluid flex-grow-1">
     <h2 class="d-flex justify-content-center p-3">Nabídka služeb</h2>
     <div class="container">
         <div class="row py-3">
+
             <div class="col-md-6 col-lg-4 mb-3 praha py-3">
                 <div class="card">
                     <img src="imgs/praha.png" class="card-img-top" alt="sluzab">
                     <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Služba Praha</h5>
-                        <button class="btn btn-light dropdown-toggle ms-4" type="button" id="praha"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle ms-4 bg-success text-white" type="button" data-bs-toggle="modal" data-bs-target="#prahaModal">
                             Zobrazit více
                         </button>
                     </div>
                 </div>
             </div>
+            <div class="modal fade" id="prahaModal" tabindex="-1" aria-labelledby="prahaModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="prahaModalLabel">Více o službě Praha</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Popis: Naše úklidové služby v hlavním městě Praha zahrnují kompletní čištění domácností, kancelářských prostor a veřejných budov. Jsme flexibilní, rychlí a ekologičtí, používáme přírodní čisticí prostředky šetrné k životnímu prostředí.
+                                <br>
+                                Cena: Úklid domácnosti (1 hodina) – 400 Kč, Úklid kanceláří (na míru) – od 1000 Kč.
+                                <br>
+                                Další informace: Možnost objednání pravidelného úklidu, speciální úklid po rekonstrukcích, nebo úklid po domácích mazlíčcích.
+                            </p>
+                            <button class="btn btn-success" id="addToCart" data-service="Služba Praha - 400 Kč">Koupit službu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-md-6 col-lg-4 mb-3 zlinsky py-3">
                 <div class="card">
                     <img src="imgs/zlin.png" class="card-img-top" alt="sluzab">
                     <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Služba Zlínský</h5>
-                        <button class="btn btn-light dropdown-toggle ms-4" type="button" id="zlin"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle ms-4 bg-success text-white" type="button" data-bs-toggle="modal" data-bs-target="#zlinskyModal">
                             Zobrazit více
                         </button>
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="zlinskyModal" tabindex="-1" aria-labelledby="zlinskyModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="zlinskyModalLabel">Více o službě Zlínský</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Popis: Úklidové služby ve Zlínském kraji zahrnují čištění domácností, komerčních objektů a průmyslových prostor. Naši zaměstnanci jsou vyškoleni v technologiích suchého čištění i detailního úklidu.
+                                <br>
+                                Cena: Úklid bytu (do 60 m²) – 350 Kč, Úklid kanceláře – 800 Kč.
+                                <br>
+                                Další informace: Nabízíme také úklid po stavebních pracích a dezinsekce prostor.</p>
+                            <button class="btn btn-success" id="addToCartZlinsky" data-service="Služba Zlínský - 350 Kč">Koupit službu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-md-6 col-lg-4 mb-3 jihocesky py-3">
                 <div class="card">
                     <img src="imgs/jihocesky.png" class="card-img-top" alt="sluzab">
                     <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Služba Jihočeský</h5>
-                        <button class="btn btn-light dropdown-toggle ms-4" type="button" id="johic"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle ms-4 bg-success text-white" type="button" data-bs-toggle="modal" data-bs-target="#jihoceskyModal">
                             Zobrazit více
                         </button>
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="jihoceskyModal" tabindex="-1" aria-labelledby="jihoceskyModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="jihoceskyModalLabel">Více o službě Jihočeský</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Popis: Úklid v Jihočeském kraji nabízí šetrný a profesionální úklid pro domácnosti, firmy a veřejné prostory. Specializujeme se na úklid po akcích a údržbu zahradních prostor.
+                                <br>
+                                Cena: Úklid domů – od 500 Kč, Údržba zahrad – od 600 Kč.
+                                <br>
+                                Další informace: Možnost objednání úklidu po svatbách, firemních akcích a konferencích.</p>
+                            <button class="btn btn-success" id="addToCartJihocesky" data-service="Služba Jihočeský - 500 Kč">Koupit službu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-md-6 col-lg-4 mb-3 pardubicky py-3">
                 <div class="card">
                     <img src="imgs/pardubicky.png" class="card-img-top" alt="sluzab">
                     <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Služba Pardubický</h5>
-                        <button class="btn btn-light dropdown-toggle ms-4" type="button" id="pardu"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle ms-4 bg-success text-white" type="button" data-bs-toggle="modal" data-bs-target="#pardubickyModal">
                             Zobrazit více
                         </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="pardubickyModal" tabindex="-1" aria-labelledby="pardubickyModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="pardubickyModalLabel">Více o službě Pardubický</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Popis: Naše úklidová služba v Pardubickém kraji se zaměřuje na úklid rodinných domů, chalup a komerčních objektů. Pracujeme s moderními čisticími prostředky a vybavením pro dokonalý výsledek.
+                                <br>
+                                Cena: Úklid domu – od 700 Kč, Čištění koberců a čalounění – 300 Kč za kus.
+                                <br>
+                                Další informace: Nabízíme i hloubkové čištění podlah, oken a instalací pro rodiny s dětmi.</p>
+                            <button class="btn btn-success" id="addToCartPardubicky" data-service="Služba Pardubický - 700 Kč">Koupit službu</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -108,121 +194,334 @@
                     <img src="imgs/olomoucky.png" class="card-img-top" alt="sluzab">
                     <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Služba Olomoucký</h5>
-                        <button class="btn btn-light dropdown-toggle ms-4" type="button" id="olom"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle ms-4 bg-success text-white" type="button" data-bs-toggle="modal" data-bs-target="#olomouckyModal">
                             Zobrazit více
                         </button>
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="olomouckyModal" tabindex="-1" aria-labelledby="olomouckyModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="olomouckyModalLabel">Více o službě Olomoucký</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Popis: Olomoucký kraj je oblast, kde nabízíme kvalitní úklidové služby pro firmy a domácnosti. Specializujeme se na jednorázové úklidy a pravidelné údržby prostor.
+                                <br>
+                                Cena: Úklid jednorázový – 500 Kč, Pravidelný úklid domácnosti (měsíčně) – od 1500 Kč.
+                                <br>
+                                Další informace: Možnost využít našich služeb pro speciální úklid po stěhování nebo výmalbě.</p>
+                            <button class="btn btn-success" id="addToCartOlomoucky" data-service="Služba Olomoucký - 500 Kč">Koupit službu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="col-md-6 col-lg-4 mb-3 plzensky py-3">
                 <div class="card">
                     <img src="imgs/Plzensky_kraj.svg.png" class="card-img-top" alt="sluzab">
-
                     <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Služba Plzeňský</h5>
-                        <button class="btn btn-light dropdown-toggle ms-4" type="button" id="plz"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle ms-4 bg-success text-white" type="button" data-bs-toggle="modal" data-bs-target="#plzenskyModal">
                             Zobrazit více
                         </button>
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="plzenskyModal" tabindex="-1" aria-labelledby="plzenskyModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="plzenskyModalLabel">Více o službě Plzeňský</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Popis: Úklidové služby v Plzeňském kraji nabízejí komplexní řešení pro domácnosti a komerční prostory. U nás je každá objednávka přizpůsobena na míru zákazníkovi.
+                                <br>
+                                Cena: Úklid domácnosti (1 hodina) – 350 Kč, Úklid kanceláří – od 700 Kč.
+                                <br>
+                                Další informace: Poskytujeme úklid pro seniory, kteří potřebují pravidelnou pomoc v domácnosti, a také nabízíme jednorázové úklidy po rekonstrukcích.</p>
+                            <button class="btn btn-success" id="addToCartPlzensky" data-service="Služba Plzeňský - 350 Kč">Koupit službu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-md-6 col-lg-4 mb-3 jihomoravsky py-3">
                 <div class="card">
                     <img src="imgs/jihomoravsky.png" class="card-img-top" alt="sluzab">
                     <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Služba Jihomoravský</h5>
-                        <button class="btn btn-light dropdown-toggle ms-4" type="button" id="jihom"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle ms-4 bg-success text-white" type="button" data-bs-toggle="modal" data-bs-target="#jihomoravskyModal">
                             Zobrazit více
                         </button>
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="jihomoravskyModal" tabindex="-1" aria-labelledby="jihomoravskyModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="jihomoravskyModalLabel">Více o službě Jihomoravský</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Popis: Úklidová služba v Jihomoravském kraji se zaměřuje na úklid domácností, kancelářských prostor a zdravotnických zařízení. Naši odborníci mají zkušenosti s různými typy čištění.
+                                <br>
+                                Cena: Úklid kanceláře – od 800 Kč, Čištění oken – 250 Kč za okno.
+                                <br>
+                                Další informace: Nabízíme úklid po různých typech akcí a údržbu bytových a komerčních prostor.</p>
+                            <button class="btn btn-success" id="addToCartJihomoravsky" data-service="Služba Jihomoravský - 800 Kč">Koupit službu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="col-md-6 col-lg-4 mb-3 moravskoslezsky py-3">
                 <div class="card">
                     <img src="imgs/Moravskoslezsky_kraj.svg" class="card-img-top" alt="sluzab">
                     <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Služba Moravskoslezský</h5>
-                        <button class="btn btn-light dropdown-toggle ms-4" type="button" id="mora"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle ms-4 bg-success text-white" type="button" data-bs-toggle="modal" data-bs-target="#moravskoslezskyModal">
                             Zobrazit více
                         </button>
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="moravskoslezskyModal" tabindex="-1" aria-labelledby="moravskoslezskyModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="moravskoslezskyModalLabel">Více o službě Moravskoslezský</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Popis: V Moravskoslezském kraji se zaměřujeme na úklid a údržbu domácností, kancelářských prostor a průmyslových zařízení. Naši pracovníci používají nejmodernější čisticí techniku pro perfektní výsledky.
+                                <br>
+                                Cena: Úklid rodinného domu – od 600 Kč, Úklid po stavebních pracích – od 1500 Kč.
+                                <br>
+                                Další informace: Specializujeme se na čištění strojů a zařízení pro průmyslové provozy.</p>
+                            <button class="btn btn-success" id="addToCartMoravskoslezsky" data-service="Služba Moravskoslezský - 600 Kč">Koupit službu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="col-md-6 col-lg-4 mb-3 stredocesky py-3">
                 <div class="card">
                     <img src="imgs/Stredocesky_kraj.svg" class="card-img-top" alt="sluzab">
                     <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Služba Středočeský</h5>
-                        <button class="btn btn-light dropdown-toggle ms-4" type="button" id="stred"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle ms-4 bg-success text-white" type="button" data-bs-toggle="modal" data-bs-target="#stredoceskyModal">
                             Zobrazit více
                         </button>
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="stredoceskyModal" tabindex="-1" aria-labelledby="stredoceskyModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="stredoceskyModalLabel">Více o službě Středočeský</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Popis: Služby úklidu ve Středočeském kraji zahrnují kompletní údržbu domácností, hotelů a restaurací. Náš tým pracuje efektivně a dbá na detail.
+                                <br>
+                                Cena: Úklid hotelového pokoje – od 350 Kč, Úklid po restauraci – od 700 Kč.
+                                <br>
+                                Další informace: Nabízíme úklid při výměně interiérů a přizpůsobíme službu pro individuální potřeby.</p>
+                            <button class="btn btn-success" id="addToCartStredocesky" data-service="Služba Středočeský - 350 Kč">Koupit službu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="col-md-6 col-lg-4 mb-3 kralovehradecky py-3">
                 <div class="card">
                     <img src="imgs/kralovehradecky.png" class="card-img-top" alt="sluzab">
                     <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Služba Královéhradecký</h5>
-                        <button class="btn btn-light dropdown-toggle ms-4" type="button" id="kral"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle ms-4 bg-success text-white" type="button" data-bs-toggle="modal" data-bs-target="#kralovehradeckyModal">
                             Zobrazit více
                         </button>
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="kralovehradeckyModal" tabindex="-1" aria-labelledby="kralovehradeckyModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="kralovehradeckyModalLabel">Více o službě Královéhradecký</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Popis: V Královéhradeckém kraji poskytujeme úklidové služby pro domácnosti, firmy i školy. Naši zaměstnanci používají ekologické čisticí prostředky pro zdraví a bezpečnost.
+                                <br>
+                                Cena: Úklid školy – od 1000 Kč, Úklid domácnosti – od 400 Kč.
+                                <br>
+                                Další informace: Poskytujeme i služby pro údržbu po výstavách a jiných kulturních akcích.</p>
+                            <button class="btn btn-success" id="addToCartKralovehradecky" data-service="Služba Královéhradecký - 400 Kč">Koupit službu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="col-md-6 col-lg-4 mb-3 karlovarsky py-3">
                 <div class="card">
                     <img src="imgs/Karlovarsky_kraj.svg.png" class="card-img-top" alt="sluzab">
                     <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Služba Karlovarský</h5>
-                        <button class="btn btn-light dropdown-toggle ms-4" type="button" id="karl"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle ms-4 bg-success text-white" type="button" data-bs-toggle="modal" data-bs-target="#karlovarskyModal">
                             Zobrazit více
                         </button>
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="karlovarskyModal" tabindex="-1" aria-labelledby="karlovarskyModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="karlovarskyModalLabel">Více o službě Karlovarský</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Popis: V Karlovarském kraji nabízíme kvalitní úklidové služby s důrazem na ekologii a efektivitu. Naši pracovníci jsou školeni pro úklid i náročnějších prostor.
+                                <br>
+                                Cena: Úklid lázeňských hotelů – od 800 Kč, Úklid apartmánů – od 500 Kč.
+                                <br>
+                                Další informace: Poskytujeme služby i pro úklid po rekonstrukcích a malířských pracích.</p>
+                            <button class="btn btn-success" id="addToCartKarlovarsky" data-service="Služba Karlovarský - 500 Kč">Koupit službu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="col-md-6 col-lg-4 mb-3 ustecky py-3">
                 <div class="card">
                     <img src="imgs/ustecky.png" class="card-img-top" alt="sluzab">
                     <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Služba Ústecký</h5>
-                        <button class="btn btn-light dropdown-toggle ms-4" type="button" id="ustec"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle ms-4 bg-success text-white" type="button" data-bs-toggle="modal" data-bs-target="#usteckyModal">
                             Zobrazit více
                         </button>
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="usteckyModal" tabindex="-1" aria-labelledby="usteckyModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="usteckyModalLabel">Více o službě Ústecký</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Popis: Úklidová služba v Ústeckém kraji poskytuje komplexní služby pro domácnosti a firmy. Naši odborníci se specializují na údržbu po akcích, čištění kanceláří i domácností.
+                                <br>
+                                Cena: Úklid kanceláře – 500 Kč, Úklid po akcích – 1200 Kč.
+                                <br>
+                                Další informace: Naše služby zahrnují i mytí oken a čištění podlahových krytin.</p>
+                            <button class="btn btn-success" id="addToCartUstecky" data-service="Služba Ústecký - 500 Kč">Koupit službu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-md-6 col-lg-4 mb-3 vysocina py-3">
                 <div class="card">
                     <img src="imgs/vysocina.png" class="card-img-top" alt="sluzab">
                     <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Služba Vysočina</h5>
-                        <button class="btn btn-light dropdown-toggle ms-4" type="button" id="vys"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle ms-4 bg-success text-white" type="button" data-bs-toggle="modal" data-bs-target="#vysocinaModal">
                             Zobrazit více
                         </button>
                     </div>
                 </div>
             </div>
+            <div class="modal fade" id="vysocinaModal" tabindex="-1" aria-labelledby="vysocinaModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="vysocinaModalLabel">Více o službě Vysočina</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Popis: Naše úklidová služba v kraji Vysočina se zaměřuje na rodinné domy, byty a komerční objekty. Klademe důraz na spolehlivost a flexibilitu.
+                                <br>
+                                Cena: Úklid bytu (do 50 m²) – od 350 Kč, Úklid rodinného domu – od 700 Kč.
+                                <br>
+                                Další informace: Možnost objednání pravidelného úklidu nebo jednorázového úklidu po velkých událostech.</p>
+                            <button class="btn btn-success" id="addToCartVysočina" data-service="Služba Vysočina - 350 Kč">Koupit službu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-md-6 col-lg-4 mb-3 liberecky py-3">
                 <div class="card">
                     <img src="imgs/liberecky.png" class="card-img-top" alt="sluzab">
                     <div class="card-body d-flex justify-content-between">
                         <h5 class="card-title">Služba Liberecký</h5>
-                        <button class="btn btn-light dropdown-toggle ms-4" type="button" id="lib"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-light dropdown-toggle ms-4 bg-success text-white" type="button" data-bs-toggle="modal" data-bs-target="#libereckyModal">
                             Zobrazit více
                         </button>
                     </div>
                 </div>
+            </div>
+
+            <div class="modal fade" id="libereckyModal" tabindex="-1" aria-labelledby="libereckyModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="libereckyModalLabel">Více o službě Liberecký</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Popis: V Libereckém kraji nabízíme úklidové služby pro domácnosti, kanceláře, školy a hotely. Naše služby zahrnují i ekologické čištění pro rodiny s dětmi.
+                                <br>
+                                Cena: Úklid domácnosti – od 500 Kč, Úklid po rekonstrukcích – od 1500 Kč.
+                                <br>
+                                Další informace: Specializujeme se na úklid po firemních akcích a školních výletech.</p>
+                            <button class="btn btn-success" id="addToCartLiberecký" data-service="Služba Liberecký - 500 Kč">Koupit službu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Košík</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <p>Váš košík je prázdný.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+                <button type="button" class="btn btn-success">Pokračovat k platbě</button>
             </div>
         </div>
     </div>
@@ -271,6 +570,123 @@
         vybertlacitko.addEventListener("click", function () {
             const dropdown = new bootstrap.Dropdown(document.getElementById("menubtn"));
             dropdown.hide();
+        });
+    });
+
+    let cart = [];
+    function updateCart() {
+        const cartItemsContainer = document.getElementById('cartItems');
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Váš košík je prázdný.</p>';
+        } else {
+            cartItemsContainer.innerHTML = '';
+            cart.forEach(item => {
+                const itemElement = document.createElement('p');
+                itemElement.textContent = item;
+                cartItemsContainer.appendChild(itemElement);
+            });
+        }
+    }
+
+    document.querySelectorAll('#addToCart').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+        });
+    });
+    document.querySelectorAll('#addToCartZlinsky').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+        });
+    });
+    document.querySelectorAll('#addToCartJihocesky').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+
+        });
+    });
+    document.querySelectorAll('#addToCartPardubicky').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+        });
+    });
+    document.querySelectorAll('#addToCartOlomoucky').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+        });
+    });
+    document.querySelectorAll('#addToCartPlzensky').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+        });
+    });
+    document.querySelectorAll('#addToCartJihomoravsky').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+        });
+    });
+    document.querySelectorAll('#addToCartMoravskoslezsky').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+        });
+    });
+    document.querySelectorAll('#addToCartStredocesky').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+
+        });
+    });
+    document.querySelectorAll('#addToCartKralovehradecky').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+        });
+    });
+    document.querySelectorAll('#addToCartKarlovarsky').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+        });
+    });
+    document.querySelectorAll('#addToCartUstecky').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+        });
+    });
+    document.querySelectorAll('#addToCartVysočina').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+        });
+    });
+    document.querySelectorAll('#addToCartLiberecký').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
         });
     });
 </script>

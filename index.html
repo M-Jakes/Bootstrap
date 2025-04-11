@@ -16,6 +16,10 @@
         <div class="bi bi-slack display-6"></div>
         <h3 class="d-flex p-2 text-decoration-underline">Ú.S. JESTER</h3>
 
+        <div class="d-flex align-items-center ms-4">
+            <i class="bi bi-cart4 position-relative" style="font-size: 2rem; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#cartModal"></i>
+        </div>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,6 +31,26 @@
         </div>
     </div>
 </nav>
+
+<div class="modal fade " id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Košík</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems">
+                    <p>Váš košík je prázdný.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+                <button type="button" class="btn btn-primary">Pokračovat k platbě</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <header class="text-center text-white bg-dark py-5">
     <h1>ÚKLIDOVÉ SLUŽBY JESTER</h1>
@@ -55,37 +79,102 @@
 
 <section id="services" class="container mt-5 py-5">
     <h2>Nabídka služeb</h2>
-    <div class="row">
-        <div class="col-md-6 col-lg-4 mb-3">
-            <div class="card">
-                <img src="https://placehold.co/600x400" class="card-img-top" alt="sluzab">
-                <div class="card-body">
-                    <h5 class="card-title">Služba 1</h5>
-                    <p class="card-text">Popis služby.</p>
-                    <p class="fw-bold">Cena: 1000Kč / 1h</p>
-                    <a href="#" class="btn btn-success">Objednat</a>
+    <div class="container-fluid flex-grow-1">
+        <h2 class="d-flex justify-content-center p-3">Nabídka služeb</h2>
+        <div class="container">
+            <div class="row py-3">
+
+                <div class="col-md-6 col-lg-4 mb-3 praha py-3">
+                    <div class="card">
+                        <img src="imgs/praha.png" class="card-img-top" alt="sluzab">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5 class="card-title">Služba Praha</h5>
+                            <button class="btn btn-light dropdown-toggle ms-4" type="button" data-bs-toggle="modal" data-bs-target="#prahaModal">
+                                Zobrazit více
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-3">
-            <div class="card">
-                <img src="https://placehold.co/600x400" class="card-img-top" alt="sluzab">
-                <div class="card-body">
-                    <h5 class="card-title">Služba 1</h5>
-                    <p class="card-text">Popis služby.</p>
-                    <p class="fw-bold">Cena: 1000Kč / 1h</p>
-                    <a href="#" class="btn btn-success">Objednat</a>
+                <div class="modal fade" id="prahaModal" tabindex="-1" aria-labelledby="prahaModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="prahaModalLabel">Více o službě Praha</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Popis: Naše úklidové služby v hlavním městě Praha zahrnují kompletní čištění domácností, kancelářských prostor a veřejných budov. Jsme flexibilní, rychlí a ekologičtí, používáme přírodní čisticí prostředky šetrné k životnímu prostředí.
+                                    <br>
+                                    Cena: Úklid domácnosti (1 hodina) – 400 Kč, Úklid kanceláří (na míru) – od 1000 Kč.
+                                    <br>
+                                    Další informace: Možnost objednání pravidelného úklidu, speciální úklid po rekonstrukcích, nebo úklid po domácích mazlíčcích.
+                                </p>
+                                <button class="btn btn-success" id="addToCart" data-service="Služba Praha - 400 Kč">Koupit službu</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-3">
-            <div class="card">
-                <img src="https://placehold.co/600x400" class="card-img-top" alt="sluzab">
-                <div class="card-body">
-                    <h5 class="card-title">Služba 1</h5>
-                    <p class="card-text">Popis služby.</p>
-                    <p class="fw-bold">Cena: 1000Kč / 1h</p>
-                    <a href="#" class="btn btn-success">Objednat</a>
+
+                <div class="col-md-6 col-lg-4 mb-3 zlinsky py-3">
+                    <div class="card">
+                        <img src="imgs/zlin.png" class="card-img-top" alt="sluzab">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5 class="card-title">Služba Zlínský</h5>
+                            <button class="btn btn-light dropdown-toggle ms-4" type="button" data-bs-toggle="modal" data-bs-target="#zlinskyModal">
+                                Zobrazit více
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="zlinskyModal" tabindex="-1" aria-labelledby="zlinskyModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="zlinskyModalLabel">Více o službě Zlínský</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Popis: Úklidové služby ve Zlínském kraji zahrnují čištění domácností, komerčních objektů a průmyslových prostor. Naši zaměstnanci jsou vyškoleni v technologiích suchého čištění i detailního úklidu.
+                                    <br>
+                                    Cena: Úklid bytu (do 60 m²) – 350 Kč, Úklid kanceláře – 800 Kč.
+                                    <br>
+                                    Další informace: Nabízíme také úklid po stavebních pracích a dezinsekce prostor.</p>
+                                <button class="btn btn-success" id="addToCartZlinsky" data-service="Služba Zlínský - 350 Kč">Koupit službu</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-3 jihocesky py-3">
+                    <div class="card">
+                        <img src="imgs/jihocesky.png" class="card-img-top" alt="sluzab">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5 class="card-title">Služba Jihočeský</h5>
+                            <button class="btn btn-light dropdown-toggle ms-4" type="button" data-bs-toggle="modal" data-bs-target="#jihoceskyModal">
+                                Zobrazit více
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="jihoceskyModal" tabindex="-1" aria-labelledby="jihoceskyModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="jihoceskyModalLabel">Více o službě Jihočeský</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Popis: Úklid v Jihočeském kraji nabízí šetrný a profesionální úklid pro domácnosti, firmy a veřejné prostory. Specializujeme se na úklid po akcích a údržbu zahradních prostor.
+                                    <br>
+                                    Cena: Úklid domů – od 500 Kč, Údržba zahrad – od 600 Kč.
+                                    <br>
+                                    Další informace: Možnost objednání úklidu po svatbách, firemních akcích a konferencích.</p>
+                                <button class="btn btn-success" id="addToCartJihocesky" data-service="Služba Jihočeský - 500 Kč">Koupit službu</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -139,6 +228,47 @@
 <footer class=" bg-success text-white text-center py-2">
     <p>Matyáš Jakeš &copy;2025</p>
 </footer>
+<script>
+
+    let cart = [];
+
+    function updateCart() {
+        const cartItemsContainer = document.getElementById('cartItems');
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Váš košík je prázdný.</p>';
+        } else {
+            cartItemsContainer.innerHTML = '';
+            cart.forEach(item => {
+                const itemElement = document.createElement('p');
+                itemElement.textContent = item;
+                cartItemsContainer.appendChild(itemElement);
+            });
+        }
+    }
+
+    document.querySelectorAll('#addToCart').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+        });
+    });
+    document.querySelectorAll('#addToCartZlinsky').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+        });
+    });
+    document.querySelectorAll('#addToCartJihocesky').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const service = e.target.getAttribute('data-service');
+            cart.push(service);
+            updateCart();
+        });
+    });
+</script>
 <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
